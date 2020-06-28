@@ -13,8 +13,14 @@ jobs:
       - name: Build
         uses: subosito/flutter-action@v1
         with:
-          flutter-version: '1.17'
-          channel: 'dev'
+          flutter-version: '1.17.x'
+          channel: 'beta'
+      - name: Upgrades flutter
+        run: flutter upgrade
+      - name: Enable Web
+        run: flutter config --enable-web
+      - name: Install dependencies
+        run: flutter packages get
       - run: flutter pub get
       - run: flutter test
       - run: flutter build web --release
