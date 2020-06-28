@@ -23,8 +23,8 @@ jobs:
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
-          name: dist
-          path: dist
+          name: firebase-build
+          path: build/web
   deploy:
     name: Deploy
     needs: build
@@ -32,6 +32,13 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v2
+        with:
+          # Artifact name
+          name: firebase-build
+          # Destination path
+          path: build/web
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
