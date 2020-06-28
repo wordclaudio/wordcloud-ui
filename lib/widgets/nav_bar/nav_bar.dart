@@ -25,15 +25,6 @@ class _NavigationBarState extends State<NavigationBar> {
                 child: Image.asset(
                   'assets/images/logo.jpeg',
                 )),
-            Row(
-              children: <Widget>[
-                _NavBarItem("Tutorial"),
-                SizedBox(
-                  width: 30,
-                ),
-                _NavBarItem("Sobre ")
-              ],
-            )
           ],
         ));
   }
