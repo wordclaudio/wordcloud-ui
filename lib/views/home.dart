@@ -16,15 +16,15 @@ class HomeView extends StatelessWidget {
           children: <Widget>[
             NavigationBar(),
             Expanded(
-              child: Row(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Description(),
-                  Expanded(
-                      child: Align(
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+                  Align(
                     alignment: Alignment.center,
                     child: StartButton("Quero testar!"),
-                  ))
+                  )
                 ],
               ),
             )
